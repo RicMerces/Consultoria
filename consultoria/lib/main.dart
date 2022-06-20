@@ -77,6 +77,12 @@ class _MainState extends State<Consultoria> {
 class Options extends StatelessWidget {
   final String asset;
 
+  // void _open(){
+  //   if(asset.split('/')[2] == 'Empresa.png'){
+  //     Navigator.push(context, route)
+  //   }
+  // }
+
   const Options({Key? key, required this.asset}) : super(key: key);
 
   @override
