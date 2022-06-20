@@ -47,15 +47,15 @@ class _MainState extends State<Consultoria> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/img/Empresa.png'),
-                          Image.asset('assets/img/Servicos.png'),
+                          Options(asset: 'assets/img/Empresa.png'),
+                          Options(asset: 'assets/img/Servicos.png')
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/img/Clientes.png'),
-                          Image.asset('assets/img/Contato.png'),
+                          Options(asset: 'assets/img/Clientes.png'),
+                          Options(asset: 'assets/img/Contato.png'),
                         ],
                       ),
                     ],
@@ -71,5 +71,21 @@ class _MainState extends State<Consultoria> {
             ),
           ),
         ));
+  }
+}
+
+class Options extends StatelessWidget {
+  final String asset;
+
+  const Options({Key? key, required this.asset}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: Image.asset(asset),
+      onTap: () {
+        print('Click');
+      },
+    );
   }
 }
