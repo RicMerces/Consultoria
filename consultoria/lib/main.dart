@@ -1,4 +1,8 @@
+import 'package:consultoria/Pages/clientes.dart';
+import 'package:consultoria/Pages/contato.dart';
+import 'package:consultoria/Pages/servicos.dart';
 import 'package:flutter/material.dart';
+import 'Pages/empresa.dart';
 
 void main() {
   runApp(
@@ -77,20 +81,50 @@ class _MainState extends State<Consultoria> {
 class Options extends StatelessWidget {
   final String asset;
 
-  // void _open(){
-  //   if(asset.split('/')[2] == 'Empresa.png'){
-  //     Navigator.push(context, route)
-  //   }
-  // }
-
   const Options({Key? key, required this.asset}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    void _open() {
+      if (asset.split('/')[2] == 'Empresa.png') {
+        print('Empresa');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Empresa(),
+          ),
+        );
+      } else if (asset.split('/')[2] == 'Servicos.png') {
+        print('Servicos');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Servicos(),
+          ),
+        );
+      } else if (asset.split('/')[2] == 'Clientes.png') {
+        print('Clientes');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Clientes(),
+          ),
+        );
+      } else if (asset.split('/')[2] == 'Contato.png') {
+        print('Contato');
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Contato(),
+          ),
+        );
+      }
+    }
+
     return GestureDetector(
       child: Image.asset(asset),
       onTap: () {
-        print('Click');
+        _open();
       },
     );
   }
